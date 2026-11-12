@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>James Karlson | Product Designer</title>
+  <meta name="description" content="Product designer, from user problem to shipped product.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="nav__brand" href="#top" aria-label="James Karlson, home">
+        <img class="nav__avatar" src="images/avatar.png" alt="" width="28" height="28">
+        <span class="nav__name">James Karlson</span>
+      </a>
+      <span class="nav__divider" aria-hidden="true"></span>
+      <ul class="nav__links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#interview">Interview</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a class="btn btn--dark nav__cta" href="mailto:info.jamesux@gmail.com">Get in touch</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__dots" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <div class="hero__avatar-wrap" tabindex="0" aria-describedby="avatar-tip">
+          <img class="hero__avatar" src="images/avatar-hero.png" alt="Illustrated portrait of James Karlson" width="165" height="165">
+          <span class="tooltip" id="avatar-tip" role="tooltip">Let’s ship something.</span>
+        </div>
+
+        <div class="pill">
+          <span class="pill__dot" aria-hidden="true"></span>
+          <span class="pill__name">Available</span>
+          <span class="pill__sep" aria-hidden="true"></span>
+          <svg class="pill__pin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span class="pill__place">Philippines</span>
+        </div>
+
+        <h1 class="hero__title">
+          Product Designer,<br>
+          turning user problems into <span class="accent">shipped product.</span>
+        </h1>
+
+        <p class="hero__sub">Product design · Motion · Design systems</p>
+
+        <div class="hero__actions">
+          <a class="btn btn--dark" href="#" id="book-call">
+            Book a Call
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9"/>
+            </svg>
+          </a>
+          <a class="btn btn--light" href="#work">See selected work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected work -->
+    <section class="work" id="work">
+      <div class="container">
+
+        <div class="section-head section-head--split" data-reveal>
+          <p class="eyebrow">[ Selected Works ]</p>
+          <h2 class="section-title">Designed with founders,<br class="br-d"> built with developers,<br class="br-d"> shipped to users.</h2>
+          <p class="section-lead">Every project here started with a problem, a founder, and a deadline, and ended with a product that shipped.</p>
+        </div>
+
+        <!-- Project 1: box 688 x 480 -->
+        <article class="project project--feature" data-reveal>
+          <a class="project__box" href="#" aria-label="View the 7Core Communications Inc. project">
+            <img src="images/work-sevencore-box.webp" alt="7Core Communications website homepage design" width="1376" height="960" loading="lazy">
+          </a>
+          <div class="project__info">
+            <h3 class="project__name">7Core Communications Inc.</h3>
+            <p class="project__desc">Cebu-based ICT solutions provider in Mandaue City, Philippines. It specializes in business communications and telephony.</p>
+            <ul class="project__tags">
+              <li>Website</li>
+              <li>CRM Dashboard</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Projects 2 to 5: boxes 540 x 400 -->
+        <div class="work__grid">
+
+          <article class="project" data-reveal>
+            <a class="project__box" href="#" aria-label="View the Nona project">
+              <img src="images/work-nona-box.webp" alt="Nona homepage design, an AI-powered real estate platform" width="1080" height="800" loading="lazy">
+            </a>
+            <div class="project__info">
+              <h3 class="project__name">Nona</h3>
+              <p class="project__desc">AI-powered real estate and home concierge platform in the Philippines. It markets itself as the country’s first “Home GPT.” It is run by Noneaway Philippines Technology Inc.</p>
+              <ul class="project__tags">
+                <li>Website</li>
+                <li>Mobile</li>
+                <li>Design Systems</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project" data-reveal style="--d: 0.12s">
+            <a class="project__box" href="#" aria-label="View the Soiltech project">
+              <img src="images/work-soiltech-box.webp" alt="Soiltech homepage design for a soil testing company" width="1080" height="800" loading="lazy">
+            </a>
+            <div class="project__info">
+              <h3 class="project__name">Soiltech</h3>
+              <p class="project__desc">A soil, civil, and geotechnical testing company based in Toowoomba, Queensland, Australia. It has operated since 1986 and serves South East Queensland and the Darling Downs.</p>
+              <ul class="project__tags">
+                <li>Website</li>
+                <li>Design Systems</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project" data-reveal>
+            <a class="project__box" href="#" aria-label="View the 7Core Communications CRM Dashboard project">
+              <img src="images/work-crm-box.webp" alt="7Core Communications CRM dashboard with a live vehicle map" width="1080" height="800" loading="lazy">
+            </a>
+            <div class="project__info">
+              <h3 class="project__name">7Core Communications - CRM Dashboard</h3>
+              <p class="project__desc">A web-based CRM and operations dashboard for 7Core Communications. It tracks vehicles on a live map and handles requests for materials, manpower, and tools.</p>
+              <ul class="project__tags">
+                <li>Web Application</li>
+                <li>Design Systems</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="project" data-reveal style="--d: 0.12s">
+            <a class="project__box" href="#" aria-label="View the Qanick project">
+              <img src="images/work-qanick-box.webp" alt="Qanick website design for a screen recording tool" width="1080" height="800" loading="lazy">
+            </a>
+            <div class="project__info">
+              <h3 class="project__name">Qanick</h3>
+              <p class="project__desc">A screen recording and async video messaging tool, delivered as a Chrome extension for PC and Mac. You capture your screen or a tab, then share the recording with a link instead of scheduling a call.</p>
+              <ul class="project__tags">
+                <li>Website</li>
+                <li>Web Application</li>
+                <li>Design Systems</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- The Conversation -->
+    <section class="convo" id="interview">
+      <div class="container container--wide convo__grid">
+
+        <div class="convo__intro" data-reveal>
+          <p class="eyebrow">[ The Conversation ]</p>
+          <h2 class="section-title">Know what to<br class="br-d"> expect.</h2>
+          <p class="section-lead">You probably have questions. Here are the ones I hear most.</p>
+          <div class="convo__avatar" tabindex="0">
+            <img src="images/avatar-hero.png" alt="Illustrated portrait of James Karlson" width="186" height="186" loading="lazy">
+          </div>
+        </div>
+
+        <ol class="chat">
+          <li class="bubble bubble--founder" data-reveal>
+            <span class="bubble__who">Founder</span>
+            <p class="bubble__q">Do you only do UI design, or the product too?</p>
+          </li>
+          <li class="bubble bubble--james" data-reveal style="--d: 0.08s">
+            <span class="bubble__who">James</span>
+            <p class="bubble__a">Both, plus the website and mobile app if you need them. Most founders hire three different people for this. I’d rather be the one person who keeps it all consistent.</p>
+          </li>
+
+          <li class="bubble bubble--founder" data-reveal>
+            <span class="bubble__who">Founder</span>
+            <p class="bubble__q">How long does it take?</p>
+          </li>
+          <li class="bubble bubble--james" data-reveal style="--d: 0.08s">
+            <span class="bubble__who">James</span>
+            <p class="bubble__a">Six to ten weeks for a web or mobile product design. Research and testing run alongside in two-week rounds.</p>
+          </li>
+
+          <li class="bubble bubble--founder" data-reveal>
+            <span class="bubble__who">Founder</span>
+            <p class="bubble__q">What does it cost?</p>
+          </li>
+          <li class="bubble bubble--james" data-reveal style="--d: 0.08s">
+            <span class="bubble__who">James</span>
+            <p class="bubble__a">Projects start at $1,800. You get a fixed quote after our first call, and it only changes if the scope does.</p>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <!-- shared dot-grid pattern used by the drawings below -->
+      <svg class="art-defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+          <pattern id="art-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+            <circle cx="1.5" cy="1.5" r="1.1" fill="#dededa"/>
+          </pattern>
+        </defs>
+      </svg>
+
+      <div class="container">
+
+        <div class="section-head" data-reveal>
+          <div class="section-head__main">
+            <p class="eyebrow">[ Services &amp; Tools ]</p>
+            <h2 class="section-title">Everything you need to<br class="br-d"> ship</h2>
+          </div>
+          <p class="section-lead section-head__lead">Product, web, and mobile design, in tools your team can build from.</p>
+        </div>
+
+        <div class="services__grid">
+
+          <!-- Product Design: from idea to shipped -->
+          <article class="service service--lg" data-reveal>
+            <div class="service__art">
+              <svg viewBox="0 0 520 290" aria-hidden="true" focusable="false">
+                <rect width="520" height="290" fill="url(#art-dots)"/>
+                <text class="big" x="508" y="236" text-anchor="end">V1</text>
+                <path class="line dash" d="M50 168C96 168 120 128 175 128S250 90 300 90S392 52 440 52"/>
+                <!-- idea -->
+                <circle class="node" cx="50" cy="168" r="10"/>
+                <circle class="bar-d" cx="50" cy="168" r="3"/>
+                <text class="lbl" x="50" y="144" text-anchor="middle">idea</text>
+                <!-- research -->
+                <rect class="node" x="164" y="117" width="22" height="22" rx="5"/>
+                <path class="line" d="M170 125h10M170 131h6"/>
+                <text class="lbl" x="175" y="104" text-anchor="middle">research</text>
+                <!-- design -->
+                <rect class="node" x="288" y="76" width="24" height="28" rx="6"/>
+                <circle class="bar-d" cx="300" cy="86" r="3"/>
+                <path class="line" d="M294 95h12"/>
+                <text class="lbl" x="300" y="62" text-anchor="middle">design</text>
+                <!-- shipped -->
+                <circle class="acc-soft" cx="440" cy="52" r="26"/>
+                <circle class="acc" cx="440" cy="52" r="15"/>
+                <path class="tick" d="M433 52l5 5 9-10"/>
+                <text class="lbl" x="440" y="22" text-anchor="middle">shipped</text>
+              </svg>
+            </div>
+            <h3 class="service__name">Product Design</h3>
+            <p class="service__desc">From the first idea to a shipped V1. I work with founders and PMs to decide what to build, then design it so it actually gets built.</p>
+          </article>
+
+          <!-- UI/UX Design: component spec sheet with redlines -->
+          <article class="service service--lg" data-reveal style="--d: 0.1s">
+            <div class="service__art">
+              <svg viewBox="0 0 520 290" aria-hidden="true" focusable="false">
+                <rect width="520" height="290" fill="url(#art-dots)"/>
+                <text class="big" x="30" y="262">Aa</text>
+                <!-- button with redlines -->
+                <rect class="node" x="56" y="62" width="160" height="46" rx="23"/>
+                <rect class="bar-d" x="94" y="82" width="84" height="6" rx="3"/>
+                <path class="red" d="M56 126v10M216 126v10M56 131h160"/>
+                <text class="red-t" x="136" y="152" text-anchor="middle">160</text>
+                <path class="red" d="M234 62h10M234 108h10M239 62v46"/>
+                <text class="red-t" x="254" y="89">46</text>
+                <path class="red dash" d="M56 85h38M178 85h38"/>
+                <!-- toggle -->
+                <rect class="acc" x="300" y="62" width="62" height="34" rx="17"/>
+                <circle class="knob" cx="345" cy="79" r="12"/>
+                <!-- checkbox + radio -->
+                <rect class="node" x="386" y="66" width="26" height="26" rx="7"/>
+                <path class="tick" d="M393 79l4 4 7-8"/>
+                <circle class="node" cx="446" cy="79" r="13"/>
+                <circle class="acc" cx="446" cy="79" r="6"/>
+                <!-- slider -->
+                <path class="track" d="M300 132h170"/>
+                <path class="track-a" d="M300 132h92"/>
+                <circle class="knob" cx="392" cy="132" r="10"/>
+                <!-- input field -->
+                <rect class="node" x="300" y="156" width="170" height="34" rx="8"/>
+                <rect class="bar-d" x="314" y="170" width="70" height="6" rx="3"/>
+                <path class="caret" d="M392 165v16"/>
+              </svg>
+            </div>
+            <h3 class="service__name">UI/UX Design</h3>
+            <p class="service__desc">User flows, wireframes, and polished screens, all based on how people really use your product.</p>
+          </article>
+
+          <!-- Web Design: one layout, three breakpoints -->
+          <article class="service" data-reveal>
+            <div class="service__art">
+              <svg viewBox="0 0 520 290" aria-hidden="true" focusable="false">
+                <rect width="520" height="290" fill="url(#art-dots)"/>
+                <!-- 1440 -->
+                <text class="lbl lbl--s" x="30" y="30">1440</text>
+                <rect class="frame" x="30" y="40" width="290" height="150" rx="4"/>
+                <rect class="col" x="40" y="48" width="14" height="134"/>
+                <rect class="col" x="62.5" y="48" width="14" height="134"/>
+                <rect class="col" x="85" y="48" width="14" height="134"/>
+                <rect class="col" x="107.5" y="48" width="14" height="134"/>
+                <rect class="col" x="130" y="48" width="14" height="134"/>
+                <rect class="col" x="152.5" y="48" width="14" height="134"/>
+                <rect class="col" x="175" y="48" width="14" height="134"/>
+                <rect class="col" x="197.5" y="48" width="14" height="134"/>
+                <rect class="col" x="220" y="48" width="14" height="134"/>
+                <rect class="col" x="242.5" y="48" width="14" height="134"/>
+                <rect class="col" x="265" y="48" width="14" height="134"/>
+                <rect class="col" x="287.5" y="48" width="14" height="134"/>
+                <rect class="bar-d" x="52" y="62" width="150" height="12" rx="6"/>
+                <rect class="bar-d" x="52" y="82" width="104" height="12" rx="6"/>
+                <rect class="bar" x="52" y="106" width="120" height="5" rx="2.5"/>
+                <rect class="bar" x="52" y="117" width="90" height="5" rx="2.5"/>
+                <rect class="acc" x="52" y="134" width="48" height="16" rx="8"/>
+                <rect class="sk-in" x="214" y="60" width="96" height="84" rx="8"/>
+                <circle class="bar" cx="240" cy="84" r="8"/>
+                <path class="bar" d="M222 136l24-26 16 16 12-12 26 22z"/>
+                <!-- 768 -->
+                <text class="lbl lbl--s" x="336" y="30">768</text>
+                <rect class="frame" x="336" y="40" width="90" height="150" rx="4"/>
+                <rect class="bar-d" x="346" y="54" width="66" height="10" rx="5"/>
+                <rect class="bar-d" x="346" y="70" width="44" height="10" rx="5"/>
+                <rect class="sk-in" x="346" y="90" width="70" height="46" rx="6"/>
+                <rect class="bar" x="346" y="146" width="66" height="5" rx="2.5"/>
+                <rect class="bar" x="346" y="157" width="48" height="5" rx="2.5"/>
+                <rect class="acc" x="346" y="170" width="40" height="14" rx="7"/>
+                <!-- 390 -->
+                <text class="lbl lbl--s" x="442" y="30">390</text>
+                <rect class="frame" x="442" y="40" width="56" height="150" rx="4"/>
+                <rect class="bar-d" x="450" y="54" width="40" height="9" rx="4.5"/>
+                <rect class="bar-d" x="450" y="69" width="28" height="9" rx="4.5"/>
+                <rect class="sk-in" x="450" y="88" width="40" height="36" rx="6"/>
+                <rect class="bar" x="450" y="134" width="40" height="5" rx="2.5"/>
+                <rect class="bar" x="450" y="145" width="30" height="5" rx="2.5"/>
+                <rect class="acc" x="450" y="160" width="30" height="12" rx="6"/>
+              </svg>
+            </div>
+            <h3 class="service__name">Web Design</h3>
+            <p class="service__desc">Websites and landing pages designed around what the business needs, with a design system and a clean handoff to developers.</p>
+          </article>
+
+          <!-- Mobile Application Design: gestures -->
+          <article class="service" data-reveal style="--d: 0.1s">
+            <div class="service__art">
+              <svg viewBox="0 0 520 290" aria-hidden="true" focusable="false">
+                <rect width="520" height="290" fill="url(#art-dots)"/>
+                <!-- tap -->
+                <rect class="sk" x="30" y="44" width="100" height="100" rx="16"/>
+                <circle class="line" cx="80" cy="94" r="32"/>
+                <circle class="line" cx="80" cy="94" r="21"/>
+                <circle class="acc" cx="80" cy="94" r="10"/>
+                <circle class="bar-d" cx="80" cy="94" r="4"/>
+                <text class="lbl lbl--s" x="80" y="176" text-anchor="middle">tap</text>
+                <!-- swipe -->
+                <rect class="sk" x="150" y="44" width="100" height="100" rx="16"/>
+                <circle class="bar-d" cx="172" cy="94" r="8"/>
+                <path class="line dash" d="M184 94h34"/>
+                <path class="red" d="M212 85l10 9-10 9"/>
+                <text class="lbl lbl--s" x="200" y="176" text-anchor="middle">swipe</text>
+                <!-- pinch -->
+                <rect class="sk" x="270" y="44" width="100" height="100" rx="16"/>
+                <circle class="bar-d" cx="298" cy="118" r="7"/>
+                <circle class="bar-d" cx="342" cy="70" r="7"/>
+                <path class="red dash" d="M304 112L336 76"/>
+                <path class="red" d="M311 120h-8v-8M329 68h8v8"/>
+                <text class="lbl lbl--s" x="320" y="176" text-anchor="middle">pinch</text>
+                <!-- hold -->
+                <rect class="sk" x="390" y="44" width="100" height="100" rx="16"/>
+                <circle class="ringt" cx="440" cy="94" r="24"/>
+                <circle class="ringa" cx="440" cy="94" r="24" stroke-dasharray="100 151" transform="rotate(-90 440 94)"/>
+                <circle class="bar-d" cx="440" cy="94" r="8"/>
+                <text class="lbl lbl--s" x="440" y="176" text-anchor="middle">hold</text>
+              </svg>
+            </div>
+            <h3 class="service__name">Mobile Application Design</h3>
+            <p class="service__desc">iOS and Android apps designed around how people really use their phones, from onboarding to the edge cases.</p>
+          </article>
+
+          <!-- UX Research and Audit: sticky-note clusters -->
+          <article class="service" data-reveal style="--d: 0.2s">
+            <div class="service__art">
+              <svg viewBox="0 0 520 290" aria-hidden="true" focusable="false">
+                <rect width="520" height="290" fill="url(#art-dots)"/>
+                <text class="big" x="26" y="214">“</text>
+                <!-- cluster A -->
+                <g transform="rotate(-5 66 86)">
+                  <rect class="sk-in" x="44" y="64" width="44" height="44" rx="6"/>
+                  <rect class="bar-d" x="52" y="76" width="26" height="4" rx="2"/>
+                  <rect class="bar" x="52" y="85" width="20" height="4" rx="2"/>
+                </g>
+                <g transform="rotate(4 120 76)">
+                  <rect class="sk-in" x="98" y="54" width="44" height="44" rx="6"/>
+                  <rect class="bar-d" x="106" y="66" width="26" height="4" rx="2"/>
+                  <rect class="bar" x="106" y="75" width="20" height="4" rx="2"/>
+                </g>
+                <g transform="rotate(3 78 136)">
+                  <rect class="sk-in" x="56" y="114" width="44" height="44" rx="6"/>
+                  <rect class="bar-d" x="64" y="126" width="26" height="4" rx="2"/>
+                  <rect class="bar" x="64" y="135" width="20" height="4" rx="2"/>
+                </g>
+                <g transform="rotate(-4 132 132)">
+                  <rect class="sk-in" x="110" y="110" width="44" height="44" rx="6"/>
+                  <rect class="bar-d" x="118" y="122" width="26" height="4" rx="2"/>
+                  <rect class="bar" x="118" y="131" width="20" height="4" rx="2"/>
+                </g>
+                <!-- cluster B, circled -->
+                <ellipse class="lasso" cx="254" cy="106" rx="78" ry="62"/>
+                <text class="lbl lbl--s" x="254" y="34" text-anchor="middle">pattern</text>
+                <g transform="rotate(-3 228 98)">
+                  <rect class="sk-in" x="206" y="76" width="44" height="44" rx="6"/>
+                  <rect class="bar-d" x="214" y="88" width="26" height="4" rx="2"/>
+                  <rect class="bar" x="214" y="97" width="20" height="4" rx="2"/>
+                </g>
+                <g transform="rotate(5 280 84)">
+                  <rect class="hi" x="258" y="62" width="44" height="44" rx="6"/>
+                  <rect class="bar-d" x="266" y="74" width="26" height="4" rx="2"/>
+                  <rect class="bar" x="266" y="83" width="20" height="4" rx="2"/>
+                </g>
+                <g transform="rotate(-2 260 140)">
+                  <rect class="sk-in" x="238" y="118" width="44" height="44" rx="6"/>
+                  <rect class="bar-d" x="246" y="130" width="26" height="4" rx="2"/>
+                  <rect class="bar" x="246" y="139" width="20" height="4" rx="2"/>
+                </g>
+                <!-- cluster C -->
+                <g transform="rotate(4 390 84)">
+                  <rect class="sk-in" x="372" y="66" width="36" height="36" rx="5"/>
+                  <rect class="bar-d" x="378" y="76" width="22" height="4" rx="2"/>
+                  <rect class="bar" x="378" y="84" width="16" height="4" rx="2"/>
+                </g>
+                <g transform="rotate(-3 432 76)">
+                  <rect class="sk-in" x="414" y="58" width="36" height="36" rx="5"/>
+                  <rect class="bar-d" x="420" y="68" width="22" height="4" rx="2"/>
+                  <rect class="bar" x="420" y="76" width="16" height="4" rx="2"/>
+                </g>
+                <g transform="rotate(-5 406 124)">
+                  <rect class="sk-in" x="388" y="106" width="36" height="36" rx="5"/>
+                  <rect class="bar-d" x="394" y="116" width="22" height="4" rx="2"/>
+                  <rect class="bar" x="394" y="124" width="16" height="4" rx="2"/>
+                </g>
+                <g transform="rotate(3 450 122)">
+                  <rect class="sk-in" x="432" y="104" width="36" height="36" rx="5"/>
+                  <rect class="bar-d" x="438" y="114" width="22" height="4" rx="2"/>
+                  <rect class="bar" x="438" y="122" width="16" height="4" rx="2"/>
+                </g>
+                <!-- magnifier -->
+                <circle class="mag" cx="466" cy="166" r="16"/>
+                <path class="mag" d="M478 178l14 14"/>
+              </svg>
+            </div>
+            <h3 class="service__name">UX Research and Audit</h3>
+            <p class="service__desc">Interviews, usability tests, and audits that show what’s broken and what to fix first.</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- About me -->
+    <section class="about" id="about">
+      <div class="container">
+
+        <div class="section-head" data-reveal>
+          <div class="section-head__main">
+            <p class="eyebrow">[ About me ]</p>
+            <h2 class="section-title">The designer behind the<br class="br-d"> work.</h2>
+          </div>
+          <p class="section-lead section-head__lead">I’d rather spend a week understanding the people behind a product than guess at what they want, because the best decisions come from the story users are already telling you.</p>
+        </div>
+
+        <div class="about__rows">
+
+          <!-- Row 1: bio + how I work -->
+          <div class="about__row about__row--top">
+
+            <article class="about-card about-card--bio" data-reveal>
+              <img class="about__avatar" src="images/avatar-hero.png" alt="Illustrated portrait of James Karlson" width="74" height="74" loading="lazy">
+              <ul class="about__chips">
+                <li class="chip">35+ Projects</li>
+                <li class="chip">5+ years of experience</li>
+              </ul>
+              <p class="about__bio">I’m James, a product designer who turns user problems into shipped products. I start by listening, then shape what I learn into flows, screens, and systems people actually follow.</p>
+            </article>
+
+            <article class="about-card" data-reveal style="--d: 0.1s">
+              <ul class="points">
+              <li class="point">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                Understanding the problem first
+              </li>
+              <li class="point">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                Aligning on goals and success
+              </li>
+              <li class="point">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>
+                Strategy tied to your goals
+              </li>
+              <li class="point">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.5 7a24 24 0 0 1 0 10"/><path d="M4.5 7a24 24 0 0 0 0 10"/><path d="M7 19.5a24 24 0 0 0 10 0"/><path d="M7 4.5a24 24 0 0 1 10 0"/><rect x="17" y="17" width="5" height="5" rx="1"/><rect x="17" y="2" width="5" height="5" rx="1"/><rect x="2" y="17" width="5" height="5" rx="1"/><rect x="2" y="2" width="5" height="5" rx="1"/></svg>
+                Designed to be built and launched
+              </li>
+              </ul>
+              <div class="about-card__text">
+                <h3 class="card-title">How I work</h3>
+                <p class="card-text">Listen first, define the real problem, then design something worth shipping.</p>
+              </div>
+            </article>
+
+          </div>
+
+          <!-- Row 2: toolbox + what guides me + photo -->
+          <div class="about__row about__row--bottom">
+
+            <article class="about-card" data-reveal>
+              <div class="marquee" aria-label="Tools I use daily">
+            <div class="marquee__row marquee__row--a">
+              <ul class="marquee__list">
+                <li class="marquee__tile"><img src="images/tools/zeplin.svg" alt="Zeplin" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile"><img src="images/tools/figma.svg" alt="Figma" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile"><img src="images/tools/framer.svg" alt="Framer" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile"><img src="images/tools/protopie.svg" alt="ProtoPie" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/zeplin.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/figma.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/framer.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/protopie.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/zeplin.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/figma.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/framer.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/protopie.svg" alt="" width="30" height="30" loading="lazy"></li>
+              </ul>
+              <ul class="marquee__list" aria-hidden="true">
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/zeplin.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/figma.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/framer.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/protopie.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/zeplin.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/figma.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/framer.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/protopie.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/zeplin.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/figma.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/framer.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/protopie.svg" alt="" width="30" height="30" loading="lazy"></li>
+              </ul>
+            </div>
+            <div class="marquee__row marquee__row--b">
+              <ul class="marquee__list">
+                <li class="marquee__tile"><img src="images/tools/chatgpt.svg" alt="ChatGPT" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile"><img src="images/tools/claude.svg" alt="Claude" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile"><img src="images/tools/miro.svg" alt="Miro" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/chatgpt.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/claude.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/miro.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/chatgpt.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/claude.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/miro.svg" alt="" width="30" height="30" loading="lazy"></li>
+              </ul>
+              <ul class="marquee__list" aria-hidden="true">
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/chatgpt.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/claude.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/miro.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/chatgpt.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/claude.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/miro.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/chatgpt.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/claude.svg" alt="" width="30" height="30" loading="lazy"></li>
+                <li class="marquee__tile" aria-hidden="true"><img src="images/tools/miro.svg" alt="" width="30" height="30" loading="lazy"></li>
+              </ul>
+            </div>
+              </div>
+              <div class="about-card__text">
+                <h3 class="card-title">Daily Toolbox</h3>
+                <p class="card-text">The tools I use every day, from research to handoff.</p>
+              </div>
+            </article>
+
+            <article class="about-card" data-reveal style="--d: 0.1s">
+              <ul class="points">
+              <li class="point">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg>
+                Research over assumptions
+              </li>
+              <li class="point">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                Purpose over decoration
+              </li>
+              <li class="point">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>
+                Shipping over perfecting
+              </li>
+              </ul>
+              <div class="about-card__text">
+                <h3 class="card-title">What guides my work</h3>
+                <p class="card-text">The best design solves a real problem, then tells its story clearly.</p>
+              </div>
+            </article>
+
+            <figure class="about-card about-card--photo" data-reveal style="--d: 0.2s">
+              <img class="photo photo--1" src="images/about-photo-1.webp" alt="A street scene photographed by James" width="632" height="828" loading="lazy">
+              <img class="photo photo--2" src="images/about-photo-2.webp" alt="Another photo taken by James" width="632" height="828" loading="lazy">
+            </figure>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__top">
+        <div class="footer__brandcol">
+          <a class="footer__brand" href="#top" aria-label="James Karlson, home">
+            <img class="footer__avatar" src="images/avatar.png" alt="" width="32" height="32" loading="lazy">
+            <span class="footer__name">James Karlson</span>
+          </a>
+          <p class="footer__about">Product designer for founders, from the first idea to a shipped product. Based in the Philippines, working worldwide.</p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer">
+          <div class="footer__col">
+            <h3 class="footer__head">Studio</h3>
+            <ul class="footer__list">
+              <li><a href="#work">Work</a></li>
+              <li><a href="#interview">Conversation</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__head">Social</h3>
+            <ul class="footer__list">
+              <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">Linkedin</a></li>
+              <li><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__head">Legal</h3>
+            <ul class="footer__list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 James Karlson. All rights reserved.</p>
+        <p>Designed by James Karlson</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
