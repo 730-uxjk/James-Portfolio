@@ -66,15 +66,6 @@ document.querySelectorAll(".btn, .nav__links a").forEach((el) => {
   textNode.replaceWith(roll);
 });
 
-// Daily Toolbox: copy each row of logos so the slide loops without a gap
-document.querySelectorAll(".marquee__track").forEach((track) => {
-  const set = track.querySelector(".marquee__set");
-  if (!set) return;
-  const copy = set.cloneNode(true);
-  copy.setAttribute("aria-hidden", "true");
-  track.appendChild(copy);
-});
-
 // In-page links: scroll to the section without putting "#work" in the address bar
 const cleanUrl = () => history.replaceState(null, "", location.pathname + location.search);
 
@@ -83,8 +74,6 @@ const fallbackSections = {
   "#work": ".work",
   "#interview": ".convo",
   "#conversation": ".convo",
-  "#about": ".about",
-  "#services": ".services",
 };
 
 const findTarget = (id) => {
@@ -122,7 +111,26 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 // If someone opens the page with a hash already in the link, tidy it up
 if (location.hash) cleanUrl();
 
-// Sections: fade each piece in as it scrolls into view
+// Mobile menu: the hamburger button opens and closes the links
+const nav = document.querySelector(".nav");
+const menuToggle = document.querySelector(".nav__toggle");
+if (nav && menuToggle) {
+  const setMenu = (open) => {
+    nav.classList.toggle("is-open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  };
+
+  menuToggle.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
+
+  // close after choosing a link, pressing Escape, tapping outside, or growing the window
+  document.querySelectorAll(".nav__links a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+  document.addEventListener("click", (e) => { if (!nav.contains(e.target)) setMenu(false); });
+  window.matchMedia("(min-width: 721px)").addEventListener("change", () => setMenu(false));
+}
+
+// Work + conversation sections: fade each piece in as it scrolls into view
 const revealEls = document.querySelectorAll("[data-reveal]");
 if ("IntersectionObserver" in window && revealEls.length) {
   const observer = new IntersectionObserver(
