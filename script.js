@@ -130,6 +130,26 @@ if (nav && menuToggle) {
   window.matchMedia("(min-width: 721px)").addEventListener("change", () => setMenu(false));
 }
 
+// Conversation: James "types" before each answer appears
+const jamesBubbles = document.querySelectorAll(".bubble--james");
+if (!prefersReducedMotion) {
+  jamesBubbles.forEach((bubble) => {
+    const dots = document.createElement("span");
+    dots.className = "typing";
+    dots.setAttribute("aria-hidden", "true");
+    dots.innerHTML = "<i></i><i></i><i></i>";
+    bubble.appendChild(dots);
+    bubble.classList.add("is-typing");
+  });
+}
+
+const finishTyping = (el) => {
+  if (!el.classList.contains("is-typing")) return;
+  const answer = el.querySelector(".bubble__a");
+  const len = answer ? answer.textContent.length : 0;
+  setTimeout(() => el.classList.remove("is-typing"), 600 + Math.min(len, 160) * 5);
+};
+
 // Work + conversation sections: fade each piece in as it scrolls into view
 const revealEls = document.querySelectorAll("[data-reveal]");
 if ("IntersectionObserver" in window && revealEls.length) {
@@ -138,6 +158,7 @@ if ("IntersectionObserver" in window && revealEls.length) {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
+          finishTyping(entry.target);
           observer.unobserve(entry.target);
         }
       });
@@ -146,5 +167,39 @@ if ("IntersectionObserver" in window && revealEls.length) {
   );
   revealEls.forEach((el) => observer.observe(el));
 } else {
-  revealEls.forEach((el) => el.classList.add("is-visible"));
+  revealEls.forEach((el) => {
+    el.classList.add("is-visible");
+    el.classList.remove("is-typing");
+  });
+}
+
+// Footer: pressing "Designed by James Karlson" sends a little ship sailing along the divider
+const credit = document.querySelector(".footer__credit");
+const footerBottom = document.querySelector(".footer__bottom");
+if (credit && footerBottom && !prefersReducedMotion) {
+  let sailing = false;
+
+  credit.addEventListener("click", () => {
+    if (sailing) return;
+    sailing = true;
+
+    const ship = document.createElement("span");
+    ship.className = "ship";
+    ship.setAttribute("aria-hidden", "true");
+    ship.style.setProperty("--run", footerBottom.clientWidth + "px");
+    ship.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+      '<path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 .6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>' +
+      '<path d="M19.38 20A11.6 11.6 0 0 0 21 14l-9-4-9 4c0 2.9.94 5.34 2.81 7.76"/>' +
+      '<path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6"/>' +
+      '<path d="M12 10v4"/><path d="M12 2v3"/></svg>';
+    footerBottom.appendChild(ship);
+
+    ship.addEventListener("animationend", (e) => {
+      if (e.animationName === "ship-sail") {
+        ship.remove();
+        sailing = false;
+      }
+    });
+  });
 }
