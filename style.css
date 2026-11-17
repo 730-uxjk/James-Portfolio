@@ -93,17 +93,23 @@ img { display: block; }
   background: #121212;
   color: #fff;
 }
-.btn--dark:hover { background: #2a2a2a; }
+@media (hover: hover) {
+  .btn--dark:hover { background: #2a2a2a; }
+}
 
 .btn--light {
   background: #fff;
   color: var(--text);
   box-shadow: var(--shadow-small);
 }
-.btn--light:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); }
+@media (hover: hover) {
+  .btn--light:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); }
+}
 
 .btn svg { transition: transform 0.3s ease; }
-.btn:hover svg { transform: translate(2px, -2px); }
+@media (hover: hover) {
+  .btn:hover svg { transform: translate(2px, -2px); }
+}
 
 /* ---------- Letter roll on hover (buttons + nav links) ---------- */
 .roll { display: inline-flex; }
@@ -124,9 +130,13 @@ img { display: block; }
   transition-delay: calc(var(--i) * 18ms);
 }
 
-a:hover .roll__char > span,
 a:focus-visible .roll__char > span {
   transform: translateY(-100%);
+}
+@media (hover: hover) {
+  a:hover .roll__char > span {
+  transform: translateY(-100%);
+}
 }
 
 /* ---------- Header ---------- */
@@ -197,7 +207,9 @@ a:focus-visible .roll__char > span {
   border-radius: 999px;
   transition: background-color 0.2s ease;
 }
-.nav__links a:hover { background: rgba(0, 0, 0, 0.06); }
+@media (hover: hover) {
+  .nav__links a:hover { background: rgba(0, 0, 0, 0.06); }
+}
 
 .nav__cta {
   gap: 0;
@@ -260,9 +272,13 @@ a:focus-visible .roll__char > span {
   transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.hero__avatar-wrap:hover .hero__avatar,
 .hero__avatar-wrap:focus-visible .hero__avatar {
   transform: scale(1.05) rotate(-3deg);
+}
+@media (hover: hover) {
+  .hero__avatar-wrap:hover .hero__avatar {
+  transform: scale(1.05) rotate(-3deg);
+}
 }
 
 .tooltip {
@@ -298,10 +314,15 @@ a:focus-visible .roll__char > span {
   clip-path: polygon(0 0, 100% 0, 50% 100%);
 }
 
-.hero__avatar-wrap:hover .tooltip,
 .hero__avatar-wrap:focus-visible .tooltip {
   opacity: 1;
   transform: translate(-50%, 0) scale(1);
+}
+@media (hover: hover) {
+  .hero__avatar-wrap:hover .tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
 }
 
 /* ---------- Availability pill ---------- */
@@ -476,7 +497,9 @@ a:focus-visible .roll__char > span {
   pointer-events: none;
 }
 
-.project__box:hover { transform: translateY(-6px); }
+@media (hover: hover) {
+  .project__box:hover { transform: translateY(-6px); }
+}
 
 /* Project text: titles are Manrope Medium 20, body is Manrope Medium 17 */
 .project__name {
@@ -575,9 +598,13 @@ a:focus-visible .roll__char > span {
   transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.convo__avatar:hover img,
 .convo__avatar:focus-visible img {
   transform: scale(1.05) rotate(-3deg);
+}
+@media (hover: hover) {
+  .convo__avatar:hover img {
+  transform: scale(1.05) rotate(-3deg);
+}
 }
 
 /* Chat bubbles */
@@ -824,7 +851,9 @@ a:focus-visible .roll__char > span {
     cursor: pointer;
     transition: background-color 0.2s ease;
   }
-  .nav__toggle:hover { background: rgba(0, 0, 0, 0.1); }
+  @media (hover: hover) {
+    .nav__toggle:hover { background: rgba(0, 0, 0, 0.1); }
+  }
   .nav__toggle span {
     position: absolute;
     left: 12px;
@@ -1031,7 +1060,9 @@ a:focus-visible .roll__char > span {
   animation-direction: reverse;
 }
 
-.marquee:hover .marquee__row { animation-play-state: paused; }
+@media (hover: hover) {
+  .marquee:hover .marquee__row { animation-play-state: paused; }
+}
 
 .marquee__list {
   display: flex;
@@ -1151,7 +1182,9 @@ a:focus-visible .roll__char > span {
   color: var(--text-soft);
   transition: color 0.2s ease;
 }
-.footer__mail:hover { color: var(--text); }
+@media (hover: hover) {
+  .footer__mail:hover { color: var(--text); }
+}
 .footer__mail svg { flex-shrink: 0; }
 
 /* three link columns: Studio 133, Social 132, Legal 98 */
@@ -1184,7 +1217,9 @@ a:focus-visible .roll__char > span {
   color: var(--text-soft);
   transition: color 0.2s ease;
 }
-.footer__list a:hover { color: var(--text); }
+@media (hover: hover) {
+  .footer__list a:hover { color: var(--text); }
+}
 
 .footer__bottom {
   display: flex;
@@ -1227,7 +1262,9 @@ a:focus-visible .roll__char > span {
     color: #fff;
     text-align: center;
   }
-  .nav__cta-li a:hover { background: #2a2a2a; }
+  @media (hover: hover) {
+    .nav__cta-li a:hover { background: #2a2a2a; }
+  }
 }
 
 /* ---------- Services: the layers move on hover ---------- */
@@ -1257,6 +1294,35 @@ a:focus-visible .roll__char > span {
   .service:hover .service__art .hot-3 { animation-delay: 0.4s; }
   .service:hover .service__art .lens { transform: translate(-96px, -62px); }
   .service:hover .service__art .trail { animation: flow-march 1s linear infinite; }
+}
+
+/* ---------- Services on touch screens: the same motion plays as each card scrolls into view ---------- */
+@media (hover: none) and (prefers-reduced-motion: no-preference) {
+  .service__art .ph, .service__art .br, .service__art .ph-m, .service__art .lens,
+  .service__art .hot, .service__art .glow, .service__art .sun { transform-box: fill-box; transform-origin: center; }
+
+  .service__art .ph, .service__art .br, .service__art .ph-m, .service__art .lens, .service__art .glow, .service__art .sun {
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .service.is-live .service__art .glow { transform: scale(1.12); }
+
+  /* Product Design: the three screens climb, the path keeps moving */
+  .service.is-live .service__art .ph-1 { transform: translateY(-4px); }
+  .service.is-live .service__art .ph-2 { transform: translateY(-9px); transition-delay: 0.07s; }
+  .service.is-live .service__art .ph-3 { transform: translateY(-14px); transition-delay: 0.14s; }
+  .service.is-live .service__art .flow { animation: flow-march 1s linear infinite; }
+
+  /* Web & App: the phone slides in over the browser */
+  .service.is-live .service__art .br { transform: translateY(-4px); }
+  .service.is-live .service__art .ph-m { transform: translate(-14px, -8px); }
+  .service.is-live .service__art .sun { transform: scale(1.25); }
+
+  /* UX Research: the heat pulses, the lens hunts for the hot spot */
+  .service.is-live .service__art .hot { animation: heat-pulse 1.2s ease-in-out infinite alternate; }
+  .service.is-live .service__art .hot-2 { animation-delay: 0.2s; }
+  .service.is-live .service__art .hot-3 { animation-delay: 0.4s; }
+  .service.is-live .service__art .lens { transform: translate(-96px, -62px); }
+  .service.is-live .service__art .trail { animation: flow-march 1s linear infinite; }
 }
 
 @keyframes flow-march { to { stroke-dashoffset: -16; } }
@@ -1305,7 +1371,9 @@ a:focus-visible .roll__char > span {
   border-radius: inherit;
   transition: background-color 0.3s ease;
 }
-.bubble__cta:hover { background: #fff; }
+@media (hover: hover) {
+  .bubble__cta:hover { background: #fff; }
+}
 
 .bubble--cta .bubble__q {
   display: block;
@@ -1328,7 +1396,9 @@ a:focus-visible .roll__char > span {
   cursor: pointer;
   transition: color 0.2s ease;
 }
-.footer__credit:hover { color: var(--text); }
+@media (hover: hover) {
+  .footer__credit:hover { color: var(--text); }
+}
 
 .ship {
   position: absolute;
@@ -1362,4 +1432,42 @@ a:focus-visible .roll__char > span {
 
 @media (prefers-reduced-motion: reduce) {
   .ship { display: none; }
+}
+
+/* ---------- Scroll motion ---------- */
+a, button { -webkit-tap-highlight-color: transparent; }
+
+.js .hero__dots { inset: -90px 0; transform: translateY(var(--py, 0px)); }
+.js .convo__avatar { transform: translateY(var(--py, 0px)); }
+.js .hero__inner { transform: translateY(var(--hy, 0px)); opacity: var(--ho, 1); will-change: transform, opacity; }
+.js .about-card--photo .photo { transform: translateY(var(--py, 0px)) scale(1.16); }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* chat bubbles slide in from their own side */
+  .js .bubble--founder[data-reveal] { transform: translate(-28px, 14px); }
+  .js .bubble--james[data-reveal]   { transform: translate(28px, 14px); }
+  .js .bubble--founder[data-reveal].is-visible,
+  .js .bubble--james[data-reveal].is-visible { transform: none; }
+
+  /* project screenshots settle in */
+  .js .project__box img { transform: scale(1.08); transition: transform 1.3s cubic-bezier(0.22, 0.61, 0.36, 1); }
+  .js .project.is-visible .project__box img { transform: scale(1); }
+
+  /* About pills and chips cascade in once their card is visible */
+  .js .point, .js .chip {
+    opacity: 0;
+    transform: translateX(-14px);
+    transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .js .about-card.is-visible .point, .js .about-card.is-visible .chip { opacity: 1; transform: none; }
+  .js .point:nth-child(1), .js .chip:nth-child(1) { transition-delay: 0.15s; }
+  .js .point:nth-child(2), .js .chip:nth-child(2) { transition-delay: 0.25s; }
+  .js .point:nth-child(3) { transition-delay: 0.35s; }
+  .js .point:nth-child(4) { transition-delay: 0.45s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .hero__inner { transform: none; opacity: 1; }
+  .js .hero__dots, .js .convo__avatar { transform: none; }
+  .js .about-card--photo .photo { transform: none; }
 }

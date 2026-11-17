@@ -203,3 +203,48 @@ if (credit && footerBottom && !prefersReducedMotion) {
     });
   });
 }
+
+// Scroll motion (mobile + desktop): gentle parallax and a fading hero as you scroll
+if (!prefersReducedMotion) {
+  const parallaxEls = [...document.querySelectorAll("[data-parallax]")];
+  const heroInner = document.querySelector(".hero__inner");
+  let ticking = false;
+
+  const update = () => {
+    ticking = false;
+    const vh = window.innerHeight;
+
+    parallaxEls.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.bottom < -150 || r.top > vh + 150) return;      // only work on what is near the screen
+      const y = (r.top + r.height / 2 - vh / 2) * -parseFloat(el.dataset.parallax);
+      el.style.setProperty("--py", y.toFixed(1) + "px");
+    });
+
+    if (heroInner) {
+      const s = Math.min(window.scrollY, vh);
+      heroInner.style.setProperty("--hy", (s * 0.18).toFixed(1) + "px");
+      heroInner.style.setProperty("--ho", Math.max(0, 1 - s / (vh * 0.85)).toFixed(2));
+    }
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(update);
+    }
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  update();
+
+  // Touch screens have no hover, so each service card plays its animation while it is on screen
+  if (window.matchMedia("(hover: none)").matches && "IntersectionObserver" in window) {
+    const live = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.target.classList.toggle("is-live", e.isIntersecting)),
+      { threshold: 0.55 }
+    );
+    document.querySelectorAll(".service").forEach((card) => live.observe(card));
+  }
+}
