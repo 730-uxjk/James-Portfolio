@@ -684,6 +684,8 @@ a:focus-visible .roll__char > span {
   overflow: hidden;
 }
 
+.service__art { position: relative; }
+.service__art::after { content: ""; position: absolute; inset: auto 0 0 0; height: 22%; background: linear-gradient(to bottom, rgba(242, 241, 237, 0), #f2f1ed); pointer-events: none; }
 .service__art svg { display: block; width: 100%; height: auto; }
 
 /* drawing styles: thin dark outlines, warm grays, one terracotta accent */
@@ -1294,8 +1296,8 @@ a:focus-visible .roll__char > span {
   .service:hover .service__art .sel { opacity: 1; transition-delay: 0.45s; }
   .service:hover .service__art .bx { opacity: 1; transition-delay: 0.5s; }
   .service:hover .service__art .tk { stroke-dashoffset: 0; }
-  .service:hover .service__art .w-l { transform: rotate(-15deg) translate(-6px, 2px); }
-  .service:hover .service__art .w-r { transform: rotate(15deg) translate(6px, 2px); }
+  .service:hover .service__art .w-l { transform: rotate(-11deg) translate(-1px, 2px); }
+  .service:hover .service__art .w-r { transform: rotate(11deg) translate(1px, 2px); }
   .service:hover .service__art .ctr { transform: translateY(-5px); }
   .service:hover .service__art .ph2 { transform: translateY(-9px); }
   .service:hover .service__art .c2 { transform: translate(-24px, -22px); }
@@ -1318,8 +1320,8 @@ a:focus-visible .roll__char > span {
   .service.is-live .service__art .sel { opacity: 1; transition-delay: 0.45s; }
   .service.is-live .service__art .bx { opacity: 1; transition-delay: 0.5s; }
   .service.is-live .service__art .tk { stroke-dashoffset: 0; }
-  .service.is-live .service__art .w-l { transform: rotate(-15deg) translate(-6px, 2px); }
-  .service.is-live .service__art .w-r { transform: rotate(15deg) translate(6px, 2px); }
+  .service.is-live .service__art .w-l { transform: rotate(-11deg) translate(-1px, 2px); }
+  .service.is-live .service__art .w-r { transform: rotate(11deg) translate(1px, 2px); }
   .service.is-live .service__art .ctr { transform: translateY(-5px); }
   .service.is-live .service__art .ph2 { transform: translateY(-9px); }
   .service.is-live .service__art .c2 { transform: translate(-24px, -22px); }
