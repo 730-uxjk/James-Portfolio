@@ -686,14 +686,24 @@ a:focus-visible .roll__char > span {
 
 .service__art svg { display: block; width: 100%; height: auto; }
 
-/* drawing styles: warm grays, one terracotta spotlight */
-.service__art .p { fill: #fff; stroke: rgba(20, 20, 19, 0.07); stroke-width: 1; filter: url(#sh); }
-.service__art .b { fill: #e6e5e0; }
-.service__art .d { fill: #d3d2cc; }
-.service__art .a { fill: rgba(196, 96, 63, 0.14); stroke: rgba(196, 96, 63, 0.4); stroke-width: 1.2; }
-.service__art .c { fill: #c4603f; }
-.service__art .r { fill: none; stroke: #c4603f; stroke-linecap: round; stroke-linejoin: round; }
-.service__art .t { fill: #a9502f; font-family: var(--serif); font-style: italic; font-size: 15px; }
+/* drawing styles: thin dark outlines, warm grays, one terracotta accent */
+.service__art .ln { fill: none; stroke: #2b2b29; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.service__art .lt { stroke: #cfcec9; }
+.service__art .fw { fill: #fff; }
+.service__art .gb { fill: #e8e7e2; }
+.service__art .gd { fill: #d3d2cc; }
+.service__art .ga { fill: rgba(196, 96, 63, 0.16); stroke: #c4603f; }
+.service__art .ac { fill: #c4603f; }
+.service__art .dk { fill: #141413; }
+.service__art .cn { fill: none; stroke: #c4603f; stroke-width: 1; stroke-dasharray: 2 3; vector-effect: non-scaling-stroke; }
+.service__art .L { filter: drop-shadow(0 6px 5px rgba(20, 20, 19, 0.1)); }
+.service__art .mv.w-l { transform: rotate(-9deg); transform-origin: 92px 176px; }
+.service__art .mv.w-r { transform: rotate(9deg); transform-origin: 244px 176px; }
+.service__art .sel, .service__art .scan { opacity: 0; }
+.service__art .rp { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.service__art .bx { fill: #c4603f; opacity: 0; }
+.service__art .tk { stroke-dasharray: 10; stroke-dashoffset: 10; }
+.service__art .hp, .service__art .pin { transform-box: fill-box; transform-origin: center; }
 
 .service__name {
   margin: 0 12px;
@@ -1267,66 +1277,66 @@ a:focus-visible .roll__char > span {
   }
 }
 
-/* ---------- Services: the layers move on hover ---------- */
+/* ---------- Services: each card has its own motion (hover on desktop, scroll into view on touch) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .service__art .mv, .service__art .cur, .service__art .sel, .service__art .rp, .service__art .bx, .service__art .tk, .service__art .scan {
+    transition: transform 0.8s cubic-bezier(0.22, 0.9, 0.3, 1), opacity 0.5s ease, stroke-dashoffset 0.5s ease 0.35s;
+  }
+}
+
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .service__art .ph, .service__art .br, .service__art .ph-m, .service__art .lens,
-  .service__art .hot, .service__art .glow, .service__art .sun { transform-box: fill-box; transform-origin: center; }
-
-  .service__art .ph, .service__art .br, .service__art .ph-m, .service__art .lens, .service__art .glow, .service__art .sun {
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  .service:hover .service__art .glow { transform: scale(1.12); }
-
-  /* Product Design: the three screens climb, the path keeps moving */
-  .service:hover .service__art .ph-1 { transform: translateY(-4px); }
-  .service:hover .service__art .ph-2 { transform: translateY(-9px); transition-delay: 0.07s; }
-  .service:hover .service__art .ph-3 { transform: translateY(-14px); transition-delay: 0.14s; }
-  .service:hover .service__art .flow { animation: flow-march 1s linear infinite; }
-
-  /* Web & App: the phone slides in over the browser */
-  .service:hover .service__art .br { transform: translateY(-4px); }
-  .service:hover .service__art .ph-m { transform: translate(-14px, -8px); }
-  .service:hover .service__art .sun { transform: scale(1.25); }
-
-  /* UX Research: the heat pulses, the lens hunts for the hot spot */
-  .service:hover .service__art .hot { animation: heat-pulse 1.2s ease-in-out infinite alternate; }
-  .service:hover .service__art .hot-2 { animation-delay: 0.2s; }
-  .service:hover .service__art .hot-3 { animation-delay: 0.4s; }
-  .service:hover .service__art .lens { transform: translate(-96px, -62px); }
-  .service:hover .service__art .trail { animation: flow-march 1s linear infinite; }
+  .service:hover .service__art .m-phone { transform: translate(6px, -4px); }
+  .service:hover .service__art .m-sched { transform: translate(-9px, -5px); }
+  .service:hover .service__art .m-chat { transform: translate(-4px, -9px); }
+  .service:hover .service__art .m-todo { transform: translate(5px, 9px); }
+  .service:hover .service__art .m-perf { transform: translate(9px, 6px); }
+  .service:hover .service__art .c1 { transform: translate(-8px, -28px); }
+  .service:hover .service__art .sel { opacity: 1; transition-delay: 0.45s; }
+  .service:hover .service__art .bx { opacity: 1; transition-delay: 0.5s; }
+  .service:hover .service__art .tk { stroke-dashoffset: 0; }
+  .service:hover .service__art .w-l { transform: rotate(-15deg) translate(-6px, 2px); }
+  .service:hover .service__art .w-r { transform: rotate(15deg) translate(6px, 2px); }
+  .service:hover .service__art .ctr { transform: translateY(-5px); }
+  .service:hover .service__art .ph2 { transform: translateY(-9px); }
+  .service:hover .service__art .c2 { transform: translate(-24px, -22px); }
+  .service:hover .service__art .rp { animation: svc-ripple 1.4s ease-out 0.8s infinite; }
+  .service:hover .service__art .scan { opacity: 1; animation: svc-sweep 1.8s ease-in-out infinite; }
+  .service:hover .service__art .hp { animation: svc-pulse 1.1s ease-in-out infinite alternate; }
+  .service:hover .service__art .h2 { animation-delay: 0.2s; }
+  .service:hover .service__art .h3 { animation-delay: 0.4s; }
+  .service:hover .service__art .pin { animation: svc-drop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+  .service:hover .service__art .p2 { animation-delay: 0.25s; }
 }
 
-/* ---------- Services on touch screens: the same motion plays as each card scrolls into view ---------- */
 @media (hover: none) and (prefers-reduced-motion: no-preference) {
-  .service__art .ph, .service__art .br, .service__art .ph-m, .service__art .lens,
-  .service__art .hot, .service__art .glow, .service__art .sun { transform-box: fill-box; transform-origin: center; }
-
-  .service__art .ph, .service__art .br, .service__art .ph-m, .service__art .lens, .service__art .glow, .service__art .sun {
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  .service.is-live .service__art .glow { transform: scale(1.12); }
-
-  /* Product Design: the three screens climb, the path keeps moving */
-  .service.is-live .service__art .ph-1 { transform: translateY(-4px); }
-  .service.is-live .service__art .ph-2 { transform: translateY(-9px); transition-delay: 0.07s; }
-  .service.is-live .service__art .ph-3 { transform: translateY(-14px); transition-delay: 0.14s; }
-  .service.is-live .service__art .flow { animation: flow-march 1s linear infinite; }
-
-  /* Web & App: the phone slides in over the browser */
-  .service.is-live .service__art .br { transform: translateY(-4px); }
-  .service.is-live .service__art .ph-m { transform: translate(-14px, -8px); }
-  .service.is-live .service__art .sun { transform: scale(1.25); }
-
-  /* UX Research: the heat pulses, the lens hunts for the hot spot */
-  .service.is-live .service__art .hot { animation: heat-pulse 1.2s ease-in-out infinite alternate; }
-  .service.is-live .service__art .hot-2 { animation-delay: 0.2s; }
-  .service.is-live .service__art .hot-3 { animation-delay: 0.4s; }
-  .service.is-live .service__art .lens { transform: translate(-96px, -62px); }
-  .service.is-live .service__art .trail { animation: flow-march 1s linear infinite; }
+  .service.is-live .service__art .m-phone { transform: translate(6px, -4px); }
+  .service.is-live .service__art .m-sched { transform: translate(-9px, -5px); }
+  .service.is-live .service__art .m-chat { transform: translate(-4px, -9px); }
+  .service.is-live .service__art .m-todo { transform: translate(5px, 9px); }
+  .service.is-live .service__art .m-perf { transform: translate(9px, 6px); }
+  .service.is-live .service__art .c1 { transform: translate(-8px, -28px); }
+  .service.is-live .service__art .sel { opacity: 1; transition-delay: 0.45s; }
+  .service.is-live .service__art .bx { opacity: 1; transition-delay: 0.5s; }
+  .service.is-live .service__art .tk { stroke-dashoffset: 0; }
+  .service.is-live .service__art .w-l { transform: rotate(-15deg) translate(-6px, 2px); }
+  .service.is-live .service__art .w-r { transform: rotate(15deg) translate(6px, 2px); }
+  .service.is-live .service__art .ctr { transform: translateY(-5px); }
+  .service.is-live .service__art .ph2 { transform: translateY(-9px); }
+  .service.is-live .service__art .c2 { transform: translate(-24px, -22px); }
+  .service.is-live .service__art .rp { animation: svc-ripple 1.4s ease-out 0.8s infinite; }
+  .service.is-live .service__art .scan { opacity: 1; animation: svc-sweep 1.8s ease-in-out infinite; }
+  .service.is-live .service__art .hp { animation: svc-pulse 1.1s ease-in-out infinite alternate; }
+  .service.is-live .service__art .h2 { animation-delay: 0.2s; }
+  .service.is-live .service__art .h3 { animation-delay: 0.4s; }
+  .service.is-live .service__art .pin { animation: svc-drop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+  .service.is-live .service__art .p2 { animation-delay: 0.25s; }
 }
 
-@keyframes flow-march { to { stroke-dashoffset: -16; } }
-@keyframes heat-pulse { from { transform: scale(0.9); } to { transform: scale(1.18); } }
+@keyframes svc-ripple { 0% { opacity: 0.9; transform: scale(0.3); } 100% { opacity: 0; transform: scale(1.5); } }
+@keyframes svc-sweep { 0% { transform: translateX(0); } 100% { transform: translateX(136px); } }
+@keyframes svc-pulse { from { transform: scale(0.9); } to { transform: scale(1.2); } }
+@keyframes svc-drop { 0% { opacity: 0; transform: translateY(-14px); } 100% { opacity: 1; transform: none; } }
+
 
 /* ---------- Conversation: James "types" before each answer ---------- */
 .bubble--james { position: relative; }
