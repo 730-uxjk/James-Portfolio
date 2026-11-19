@@ -108,8 +108,17 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-// If someone opens the page with a hash already in the link, tidy it up
-if (location.hash) cleanUrl();
+// Arriving from another page (e.g. contact.html → index.html#work): jump to the section, then tidy the address bar
+if (location.hash) {
+  const hash = location.hash;
+  const jump = () => {
+    const target = hash !== "#top" ? findTarget(hash) : null;
+    if (target) target.scrollIntoView({ behavior: "instant", block: "start" });
+  };
+  cleanUrl();
+  if (document.readyState === "complete") jump();
+  else window.addEventListener("load", jump, { once: true });
+}
 
 // Mobile menu: the hamburger button opens and closes the links
 const nav = document.querySelector(".nav");
@@ -247,4 +256,53 @@ if (!prefersReducedMotion) {
     );
     document.querySelectorAll(".service").forEach((card) => live.observe(card));
   }
+}
+
+// Contact form: check the fields, then open the visitor's email app with everything filled in
+const contactForm = document.querySelector("#contact-form");
+if (contactForm) {
+  const status = contactForm.querySelector(".form__status");
+  const select = contactForm.querySelector("select");
+  select.addEventListener("change", () => select.classList.add("is-chosen"));
+
+  const rules = {
+    name: (v) => (v.trim() ? "" : "Please add your name."),
+    email: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "" : "Please enter a valid email address."),
+    message: (v) => (v.trim().length >= 10 ? "" : "Tell us a little about the project, a sentence or two is fine."),
+  };
+
+  const check = (field) => {
+    const el = contactForm.elements[field];
+    const msg = rules[field](el.value);
+    const err = contactForm.querySelector("#err-" + field);
+    el.setAttribute("aria-invalid", msg ? "true" : "false");
+    err.textContent = msg;
+    err.hidden = !msg;
+    return !msg;
+  };
+
+  Object.keys(rules).forEach((field) => {
+    const el = contactForm.elements[field];
+    el.addEventListener("blur", () => check(field));
+    el.addEventListener("input", () => { if (el.getAttribute("aria-invalid") === "true") check(field); });
+  });
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const ok = Object.keys(rules).map(check).every(Boolean);
+    if (!ok) {
+      status.textContent = "Please fix the highlighted fields.";
+      const first = contactForm.querySelector('[aria-invalid="true"]');
+      if (first) first.focus();
+      return;
+    }
+    const v = (n) => contactForm.elements[n].value.trim() || "-";
+    const body = [
+      "Name: " + v("name"), "Email: " + v("email"), "Company: " + v("company"),
+      "Needs help with: " + v("service"), "Budget: " + v("budget"), "Timeline: " + v("timeline"),
+      "", v("message"),
+    ].join("\n");
+    status.textContent = "Your email app should open with everything filled in. If it doesn't, write to info.jamesux@gmail.com.";
+    window.location.href = "mailto:info.jamesux@gmail.com?subject=" + encodeURIComponent("Project inquiry from " + v("name")) + "&body=" + encodeURIComponent(body);
+  });
 }

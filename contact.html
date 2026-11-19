@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | James Karlson</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <meta name="description" content="Tell James about your project: goals, audience, scope, budget and timeline.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="nav__brand" href="index.html" aria-label="James Karlson, home">
+        <img class="nav__avatar" src="images/avatar.png" alt="" width="28" height="28">
+        <span class="nav__name">James Karlson</span>
+      </a>
+      <span class="nav__divider" aria-hidden="true"></span>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#interview">Interview</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li class="nav__cta-li"><a href="contact.html">Get in touch</a></li>
+      </ul>
+      <a class="btn btn--dark nav__cta" href="contact.html">Get in touch</a>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container">
+
+        <div class="section-head" data-reveal>
+          <div class="section-head__main">
+            <p class="eyebrow">[ Start a conversation ]</p>
+            <h1 class="section-title">Tell us what you’re<br class="br-d"> imagining.</h1>
+          </div>
+          <p class="section-lead section-head__lead">Have a new project, a challenge to solve, or an idea you’re ready to explore? Share a few details and we’ll take it from there.</p>
+        </div>
+
+        <div class="contact__grid">
+
+          <aside class="contact-card" data-reveal>
+            <img class="contact-card__bg" src="images/about-photo-1.webp" alt="" width="632" height="828" decoding="async">
+            <div class="contact-card__body">
+              <span class="contact-card__pill"><i></i>Contact</span>
+              <h2 class="contact-card__title">We’d love to hear what you’re working on.</h2>
+              <dl class="contact-card__list">
+                <div class="contact-card__item"><dt>Email</dt><dd><a href="mailto:info.jamesux@gmail.com">info.jamesux@gmail.com</a></dd></div>
+                <div class="contact-card__item"><dt>Phone</dt><dd><a href="tel:+639456421610">+63 945 642 1610</a></dd></div>
+                <div class="contact-card__item"><dt>Location</dt><dd>Cagayan De Oro City, Philippines · Working Worldwide</dd></div>
+              </dl>
+            </div>
+          </aside>
+
+          <form class="form-card" id="contact-form" novalidate data-reveal style="--d: 0.1s">
+            <h2 class="form-card__title">A little about your project</h2>
+            <div class="form__grid">
+              <div class="field">
+                <label class="field__label" for="name">Your name</label>
+                <input class="input" id="name" name="name" type="text" placeholder="John Doe" autocomplete="name" required>
+                <p class="field__error" id="err-name" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="email">Email address</label>
+                <input class="input" id="email" name="email" type="email" placeholder="johndoe@company.com" autocomplete="email" required>
+                <p class="field__error" id="err-email" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="company">Company/brand</label>
+                <input class="input" id="company" name="company" type="text" placeholder="Company name" autocomplete="organization">
+              </div>
+              <div class="field">
+                <label class="field__label" for="service">What do you need help with?</label>
+                <div class="select">
+                  <select class="input" id="service" name="service">
+                    <option>UI/UX Design</option>
+                    <option>Product Design</option>
+                    <option>Web &amp; App Design</option>
+                    <option>UX Research and Audit</option>
+                    <option>Something else</option>
+                  </select>
+                  <svg class="select__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field__label" for="budget">Estimated budget (optional)</label>
+                <input class="input" id="budget" name="budget" type="text" placeholder="e.g. $15k–$30k">
+              </div>
+              <div class="field">
+                <label class="field__label" for="timeline">Ideal timeline (optional)</label>
+                <input class="input" id="timeline" name="timeline" type="text" placeholder="e.g. Q1 2027">
+              </div>
+              <div class="field field--full">
+                <label class="field__label" for="message">Tell us about the project</label>
+                <textarea class="input input--area" id="message" name="message" placeholder="Goals, audience, scope, anything we should know…" required></textarea>
+                <p class="field__error" id="err-message" hidden></p>
+              </div>
+            </div>
+            <div class="form__actions">
+              <button class="btn btn--dark form__submit" type="submit">Send Project Inquiry <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg></button>
+              <p class="form__status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__top">
+        <div class="footer__brandcol">
+          <a class="footer__brand" href="index.html" aria-label="James Karlson, home">
+            <img class="footer__avatar" src="images/avatar.png" alt="" width="32" height="32" loading="lazy" decoding="async">
+            <span class="footer__name">James Karlson</span>
+          </a>
+          <p class="footer__about">Product designer for founders, from the first idea to a shipped product. Based in the Philippines, working worldwide.</p>
+          <a class="footer__mail" href="mailto:info.jamesux@gmail.com">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            info.jamesux@gmail.com
+          </a>
+        </div>
+
+        <nav class="footer__nav" aria-label="Footer">
+          <div class="footer__col">
+            <h3 class="footer__head">Studio</h3>
+            <ul class="footer__list">
+              <li><a href="index.html#work">Work</a></li>
+              <li><a href="index.html#interview">Conversation</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#about">About</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__head">Social</h3>
+            <ul class="footer__list">
+              <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">Linkedin</a></li>
+              <li><a href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__head">Legal</h3>
+            <ul class="footer__list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 James Karlson. All rights reserved.</p>
+        <p><button class="footer__credit" type="button" aria-label="Designed by James Karlson. Press to send a little ship sailing.">Designed by James Karlson</button></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

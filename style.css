@@ -415,9 +415,9 @@ a:focus-visible .roll__char > span {
 .eyebrow {
   margin: 0;
   font-family: var(--serif);
-  font-size: 12px;
-  line-height: 17px;
-  letter-spacing: 0.01em;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -453,7 +453,7 @@ a:focus-visible .roll__char > span {
 
 .section-head__lead {
   max-width: 405px;
-  margin: 34px 0 0;
+  margin: 41px 0 0;
 }
 
 /* Selected Works: heading left, body text on the right, level with the middle of the heading */
@@ -1139,7 +1139,7 @@ a:focus-visible .roll__char > span {
 }
 
 /* ---------- Footer (measured from the Figma frame) ---------- */
-.footer { padding: 80px 0; }
+.footer { padding: 80px 0; background: #fff; }
 
 .footer__top {
   display: flex;
@@ -1482,4 +1482,166 @@ a, button { -webkit-tap-highlight-color: transparent; }
   .js .hero__inner { transform: none; opacity: 1; }
   .js .hero__dots, .js .convo__avatar { transform: none; }
   .js .about-card--photo .photo { transform: none; }
+}
+
+/* ---------- Contact page (measured from the Figma frames) ---------- */
+.contact { position: relative; padding: 40px 0 80px; scroll-margin-top: 40px; }
+.contact > .container { position: relative; }
+
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 382fr) minmax(0, 730fr);
+  gap: 16px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+/* dark contact card */
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  background: #141413;
+  color: #fff;
+}
+.contact-card__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 60%;
+}
+.contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, #1d1e1d 0%, rgba(29, 30, 29, 0.93) 30%, rgba(20, 20, 19, 0.6) 56%, rgba(10, 10, 9, 0.95) 100%);
+}
+.contact-card__body { position: relative; z-index: 2; padding: 44px 40px 43px; }
+
+.contact-card__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 30px;
+  padding: 0 14px 0 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.contact-card__pill i { width: 7px; height: 7px; border-radius: 2px; background: #c4603f; }
+
+.contact-card__title {
+  margin: 18px 0 6px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 33px;
+  letter-spacing: -0.04em;
+}
+
+.contact-card__list { margin: 0; }
+.contact-card__item { padding: 21px 0 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+.contact-card__item dt {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d4673f;
+}
+.contact-card__item dd {
+  margin: 6px 0 0;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.82);
+}
+.contact-card__item a { transition: color 0.2s ease; }
+.contact-card__item a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+
+/* form card */
+.form-card { padding: 40px; background: #fff; border-radius: 32px; }
+.form-card__title {
+  margin: 0 0 26px;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
+  letter-spacing: -0.03em;
+}
+
+.form__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px 18px; }
+.field { min-width: 0; }
+.field--full { grid-column: 1 / -1; }
+
+.field__label { display: block; margin-bottom: 6px; font-size: 16px; font-weight: 500; line-height: 20px; color: var(--text); }
+
+.input {
+  display: block;
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid rgba(20, 20, 19, 0.1);
+  border-radius: 18px;
+  background: #fff;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input::placeholder { color: #a3a29d; opacity: 1; }
+.input--area { height: 160px; min-height: 120px; padding: 14px 16px; border-radius: 20px; line-height: 1.5; resize: vertical; }
+.input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(196, 96, 63, 0.15); }
+.input[aria-invalid="true"] { border-color: var(--accent); }
+@media (hover: hover) { .input:hover:not(:focus) { border-color: rgba(20, 20, 19, 0.24); } }
+
+.select { position: relative; }
+.select select { appearance: none; -webkit-appearance: none; padding-right: 48px; cursor: pointer; }
+.select select:not(.is-chosen) { color: #a3a29d; }
+.select__icon { position: absolute; top: 50%; right: 16px; transform: translateY(-50%); pointer-events: none; color: var(--text); }
+
+.field__error { margin: 6px 0 0; font-size: 13px; line-height: 18px; color: #b0472a; }
+
+.form__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 18px; }
+.form__submit { height: 46px; padding: 0 26px; gap: 10px; font-size: 16px; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18); }
+.form__submit:active { transform: scale(0.98); }
+.form__status { margin: 0; font-size: 15px; line-height: 22px; color: var(--text-soft); }
+
+@media (max-width: 1100px) { .contact-card__title { font-size: 28px; line-height: 30px; } }
+
+@media (max-width: 900px) {
+  .eyebrow { font-size: 12px; line-height: 17px; }
+  .contact { padding: 40px 0 64px; }
+  .contact__grid { grid-template-columns: minmax(0, 1fr); margin-top: 32px; }
+  .contact-card__title { font-size: 32px; line-height: 33px; }
+}
+
+@media (max-width: 720px) {
+  .form__grid { grid-template-columns: minmax(0, 1fr); }
+  .form-card { padding: 28px 20px; border-radius: 28px; }
+  .contact-card { border-radius: 28px; }
+  .contact-card__body { padding: 32px 24px; }
+  .form__actions .btn { width: 100%; justify-content: center; }
+}
+
+/* ---------- Contact page: extra hover touches ---------- */
+.contact-card__bg { transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1); }
+.contact-card__item { transition: border-color 0.25s ease; }
+.form__submit svg { transition: transform 0.3s ease; }
+
+@media (hover: hover) {
+  .contact-card:hover .contact-card__bg { transform: scale(1.05); }
+  .contact-card__item:hover { border-bottom-color: rgba(255, 255, 255, 0.3); }
+  .form__submit:hover { box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card__bg { transition: none; }
 }
